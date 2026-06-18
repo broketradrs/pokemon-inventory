@@ -3,6 +3,10 @@ const csvUrl =
 
 const cardsPerPage = 60;
 
+const ADMIN_PASSWORD = "scalper";
+
+let adminMode = false;
+
 let allCards = [];
 let filteredCards = [];
 let currentPage = 1;
@@ -57,6 +61,12 @@ function renderCards() {
             <h2>${card.cardName}</h2>
             <p>Condition: ${card.condition}</p>
             <p>Price: ${card.stickerPrice}</p>
+
+            ${
+                adminMode
+                    ? `<button class="soldButton">Mark Sold</button>`
+                    : ""
+            }
         `;
 
         cardsDiv.appendChild(cardDiv);
@@ -144,3 +154,40 @@ document
 document
     .getElementById("sortSelect")
     .addEventListener("change", applyFilters);
+
+const adminButton = document.getElementById("adminButton");
+const exitAdminButton = document.getElementById("exitAdminButton");
+
+adminButton.addEventListener("click", () => {
+
+    const password = prompt("Enter admin password:");
+
+    if (password === ADMIN_PASSWORD) {
+
+        adminMode = true;
+
+        adminButton.style.display = "none";
+        exitAdminButton.style.display = "inline-block";
+
+        renderCards();
+
+        alert("Admin mode enabled.");
+
+    } else {
+
+        alert("Incorrect password.");
+
+    }
+
+});
+
+exitAdminButton.addEventListener("click", () => {
+
+    adminMode = false;
+
+    adminButton.style.display = "inline-block";
+    exitAdminButton.style.display = "none";
+
+    renderCards();
+
+});
