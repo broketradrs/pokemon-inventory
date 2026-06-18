@@ -8,17 +8,38 @@
 
 <h1>Pokemon Inventory</h1>
 
-<input type="text" id="searchInput" placeholder="Search cards...">
+<div class="toolbar">
 
-<select id="sortSelect">
-    <option value="default">Default</option>
-    <option value="high">Price High → Low</option>
-    <option value="low">Price Low → High</option>
-    <option value="alpha">Alphabetical A → Z</option>
-</select>
-    
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search cards..."
+    >
+
+    <select id="sortSelect">
+        <option value="default">Default</option>
+        <option value="high">Price High → Low</option>
+        <option value="low">Price Low → High</option>
+        <option value="alpha">Alphabetical A → Z</option>
+    </select>
+
+    <div class="toolbar-right">
+
+        <button id="adminButton">
+            Admin Login
+        </button>
+
+        <button id="exitAdminButton" style="display:none;">
+            Exit Admin Mode
+        </button>
+
+    </div>
+
+</div>
+
 <div id="cards"></div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
