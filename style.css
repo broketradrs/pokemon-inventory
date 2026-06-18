@@ -16,3 +16,23 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,.1);
 }
+
+#searchInput {
+    width: 250px;
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+#sortSelect {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+#adminButton,
+#exitAdminButton {
+    padding: 8px 14px;
+    font-size: 16px;
+    margin-left: 15px;
+}
