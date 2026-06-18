@@ -34,15 +34,18 @@ body {
 .toolbar {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .toolbar-center {
-    margin-left: auto;
-    margin-right: auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .toolbar-right {
-    margin-left: auto;
+    display: flex;
+    gap: 10px;
 }
 
 #topPagination,
