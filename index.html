@@ -6,40 +6,45 @@
 </head>
 <body>
 
-<h1>Pokemon Inventory</h1>
+    <h1>Pokemon Inventory</h1>
 
-<div class="toolbar">
+    <div class="toolbar">
 
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search cards..."
-    >
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search cards..."
+        >
 
-    <select id="sortSelect">
-        <option value="default">Default</option>
-        <option value="high">Price High → Low</option>
-        <option value="low">Price Low → High</option>
-        <option value="alpha">Alphabetical A → Z</option>
-    </select>
+        <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="high">Price High → Low</option>
+            <option value="low">Price Low → High</option>
+            <option value="alpha">Alphabetical A → Z</option>
+        </select>
 
-    <div class="toolbar-right">
+        <div class="toolbar-center">
 
-        <button id="adminButton">
-            Admin Login
-        </button>
+            <button id="adminButton">
+                Admin Login
+            </button>
 
-        <button id="exitAdminButton" style="display:none;">
-            Exit Admin Mode
-        </button>
+            <button id="exitAdminButton" style="display:none;">
+                Exit Admin Mode
+            </button>
+
+        </div>
+
+        <div class="toolbar-right" id="topPagination">
+        </div>
 
     </div>
 
-</div>
+    <div id="cards"></div>
 
-<div id="cards"></div>
+    <div id="bottomPagination"></div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
