@@ -228,20 +228,42 @@ document
 
 const adminButton = document.getElementById("adminButton");
 
+
 adminButton.addEventListener("click", () => {
 
     const password = prompt("Enter admin password:");
 
     if (password === ADMIN_PASSWORD) {
 
-      const randomImage =
-          easterEggImages[
-              Math.floor(Math.random() * easterEggImages.length)
-          ];
-      
-      document.getElementById("easterEggImage").src = randomImage;
-      
-      document.getElementById("easterEggOverlay").style.display = "flex";
+        const overlay = document.getElementById("easterEggOverlay");
+        const image = document.getElementById("easterEggImage");
+
+        overlay.style.display = "flex";
+
+        let count = 0;
+        const maxSpins = 20;
+
+        const slotAnimation = setInterval(() => {
+
+            const randomIndex =
+                Math.floor(Math.random() * easterEggImages.length);
+
+            image.src = easterEggImages[randomIndex];
+
+            count++;
+
+            if (count >= maxSpins) {
+
+                clearInterval(slotAnimation);
+
+                const finalIndex =
+                    Math.floor(Math.random() * easterEggImages.length);
+
+                image.src = easterEggImages[finalIndex];
+
+            }
+
+        }, 100);
 
     } else {
 
@@ -259,6 +281,8 @@ document
         document.getElementById("easterEggOverlay").style.display = "none";
 
     });
+
+
 document
     .getElementById("cardViewer")
     .addEventListener("click", () => {
