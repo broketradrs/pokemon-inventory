@@ -234,7 +234,14 @@ adminButton.addEventListener("click", () => {
 
     if (password === ADMIN_PASSWORD) {
 
-        document.getElementById("easterEggOverlay").style.display = "flex";
+      const randomImage =
+          easterEggImages[
+              Math.floor(Math.random() * easterEggImages.length)
+          ];
+      
+      document.getElementById("easterEggImage").src = randomImage;
+      
+      document.getElementById("easterEggOverlay").style.display = "flex";
 
     } else {
 
