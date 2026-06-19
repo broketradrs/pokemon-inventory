@@ -240,9 +240,10 @@ adminButton.addEventListener("click", () => {
         
         overlay.style.display = "flex";
         
-        let delay = 50;          // starts very fast
+
+        let delay = 70;
         let spinCount = 0;
-        const maxSpins = 18;
+        const maxSpins = 12;
         
         function spinImage() {
         
@@ -255,14 +256,15 @@ adminButton.addEventListener("click", () => {
         
             if (spinCount < maxSpins) {
         
-                // gradually slow down
-                delay += 12;
+                // Only slow down at the very end
+                if (spinCount >= maxSpins - 2) {
+                    delay = 180;
+                }
         
                 setTimeout(spinImage, delay);
         
             } else {
         
-                // final image
                 const finalIndex =
                     Math.floor(Math.random() * easterEggImages.length);
         
@@ -273,6 +275,7 @@ adminButton.addEventListener("click", () => {
         }
         
         spinImage();
+
 
 
 
