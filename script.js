@@ -237,12 +237,6 @@ adminButton.addEventListener("click", () => {
 
         const overlay = document.getElementById("easterEggOverlay");
         const image = document.getElementById("easterEggImage");
-
-        overlay.style.display = "flex";
-
-
-        const overlay = document.getElementById("easterEggOverlay");
-        const image = document.getElementById("easterEggImage");
         
         overlay.style.display = "flex";
         
