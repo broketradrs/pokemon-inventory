@@ -240,22 +240,35 @@ adminButton.addEventListener("click", () => {
 
         overlay.style.display = "flex";
 
-        let count = 0;
-        const maxSpins = 25;
+
+        const overlay = document.getElementById("easterEggOverlay");
+        const image = document.getElementById("easterEggImage");
         
-        const slotAnimation = setInterval(() => {
+        overlay.style.display = "flex";
+        
+        let delay = 80;          // starts very fast
+        let spinCount = 0;
+        const maxSpins = 20;
+        
+        function spinImage() {
         
             const randomIndex =
                 Math.floor(Math.random() * easterEggImages.length);
         
             image.src = easterEggImages[randomIndex];
         
-            count++;
+            spinCount++;
         
-            if (count >= maxSpins) {
+            if (spinCount < maxSpins) {
         
-                clearInterval(slotAnimation);
+                // gradually slow down
+                delay += 25;
         
+                setTimeout(spinImage, delay);
+        
+            } else {
+        
+                // final image
                 const finalIndex =
                     Math.floor(Math.random() * easterEggImages.length);
         
@@ -263,7 +276,11 @@ adminButton.addEventListener("click", () => {
         
             }
         
-        }, 200);
+        }
+        
+        spinImage();
+
+
 
     } else {
 
