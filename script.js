@@ -241,29 +241,29 @@ adminButton.addEventListener("click", () => {
         overlay.style.display = "flex";
 
         let count = 0;
-        const maxSpins = 20;
-
+        const maxSpins = 25;
+        
         const slotAnimation = setInterval(() => {
-
+        
             const randomIndex =
                 Math.floor(Math.random() * easterEggImages.length);
-
+        
             image.src = easterEggImages[randomIndex];
-
+        
             count++;
-
+        
             if (count >= maxSpins) {
-
+        
                 clearInterval(slotAnimation);
-
+        
                 const finalIndex =
                     Math.floor(Math.random() * easterEggImages.length);
-
+        
                 image.src = easterEggImages[finalIndex];
-
+        
             }
-
-        }, 100);
+        
+        }, 200);
 
     } else {
 
