@@ -104,6 +104,7 @@ body {
 }
 
 #easterEggImage {
-    max-width: 90%;
-    max-height: 90%;
+    height: 85vh;
+    width: auto;
+    border-radius: 15px;
 }
