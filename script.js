@@ -63,6 +63,24 @@ function renderCards() {
         `;
 
         cardsDiv.appendChild(cardDiv);
+
+      
+      cardDiv.addEventListener("click", () => {
+    
+        document.getElementById("viewerImage").src =
+            card.imageUrl;
+    
+        document.getElementById("viewerName").textContent =
+            card.cardName;
+    
+        document.getElementById("viewerCondition").textContent =
+            "Condition: " + card.condition;
+    
+        document.getElementById("viewerPrice").textContent =
+            "Price: " + card.stickerPrice;
+    
+        document.getElementById("cardViewer").style.display = "flex";
+    
     });
 
     renderPagination();
@@ -172,5 +190,12 @@ document
     .addEventListener("click", () => {
 
         document.getElementById("easterEggOverlay").style.display = "none";
+
+    });
+document
+    .getElementById("cardViewer")
+    .addEventListener("click", () => {
+
+        document.getElementById("cardViewer").style.display = "none";
 
     });
