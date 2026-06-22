@@ -201,7 +201,7 @@ Papa.parse(csvUrl, {
                     tcgLink.match(/product\/(\d+)/)?.[1];
 
                 const imageUrl =
-                    `https://tcgplayer-cdn.tcgplayer.com/product/${productId}_in_300x300.jpg`;
+                    `https://tcgplayer-cdn.tcgplayer.com/product/${productId}_in_1000x1000.jpg`;
 
                 allCards.push({
                     cardName,
