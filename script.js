@@ -114,7 +114,7 @@ function renderCards() {
         cardDiv.className = "card";
 
         cardDiv.innerHTML = `
-            <img src="${card.imageUrl}">
+            <img src="${card.imageUrl}" loading="lazy">
             <h2>${card.cardName}</h2>
             <p>Condition: ${card.condition}</p>
             <p>Price: ${card.stickerPrice}</p>
